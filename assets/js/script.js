@@ -143,7 +143,7 @@ class gamePlay {
 function ready() {
   let overlays = document.querySelectorAll('.overlay-text');
   let cards = document.querySelectorAll('.card');
-  let game = new gamePlay(150, cards);
+  let game = new gamePlay(100, cards);
 
   overlays.forEach((overlay) => {
     overlay.addEventListener('click', () => {
