@@ -4,7 +4,16 @@
   box-sizing: border-box;
   font-family: 'Purple Purse', cursive;
 }
-.bg-img-left {
+body {
+  background-color: #322c34;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+h5 {
+  text-align: center;
+  color: white;
+}
+.bg-section {
   background-image: url('../img/home/bg-left.jpg');
   background-position: center;
   background-size: cover;
@@ -12,17 +21,11 @@
   min-height: 100vh;
 }
 
-.bg-img-left .logo {
+.bg-section .logo {
   margin: auto;
   width: 100%;
   height: auto;
   margin-top: 14rem;
-}
-
-body {
-  background-color: #322c34;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
 }
 
 .info {
@@ -135,15 +138,7 @@ body {
   animation: overlay-grow 500ms forwards;
   cursor: pointer;
 }
-h5 {
-  /* padding-top: 5rem; */
-  text-align: center;
-  color: white;
-}
-.copyrights {
-  width: 30px;
-  height: auto;
-}
+
 @keyframes overlay-grow {
   from {
     background-color: rgba(0, 0, 0, 0);
@@ -154,19 +149,6 @@ h5 {
     background-color: rgba(0, 0, 0, 0.8);
   }
 }
-
-/* @keyframes shake {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
-} */
 
 .back {
   background-color: #f6f7f3;
@@ -189,10 +171,13 @@ h5 {
 
 .card.visible .front {
   transform: rotateY(0deg);
-
-  /* Mobile Device */
 }
 
+.copyrights {
+  width: 30px;
+  height: auto;
+}
+/* Mobile Device */
 @media only screen and (max-width: 992px) {
   .info {
     margin: auto;
@@ -202,9 +187,6 @@ h5 {
   .infoFlip {
     text-align: left;
   }
-  .c {
-    text-align: right !important;
-  }
   .quit {
     text-align: right !important;
     padding: 5px 0px;
@@ -212,7 +194,7 @@ h5 {
 }
 
 @media only screen and (max-width: 769px) {
-  .bg-img-left {
+  .bg-section {
     visibility: hidden;
     display: none;
   }
@@ -254,13 +236,12 @@ h5 {
     visibility: hidden;
   }
   .quit {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   #time,
   #flips {
     visibility: visible;
     font-size: 2rem;
-    /* height: 0; */
   }
 
   h5 {
