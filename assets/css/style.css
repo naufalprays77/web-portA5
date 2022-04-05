@@ -2,10 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Purple Purse', cursive;
+}
+.bg-img-left {
+  background-image: url('../img/home/bg-left.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
-html {
-  min-height: 100vh;
+.bg-img-left .logo {
+  margin: auto;
+  width: 100%;
+  height: auto;
+  margin-top: 14rem;
 }
 
 body {
@@ -14,37 +25,51 @@ body {
   font-weight: 300;
 }
 
-.title {
-  color: #f6f7f3;
-  font-size: 3rem;
-  text-align: center;
-}
-
-.info-container {
-  grid-column: 1/-1;
-  display: flex;
-  justify-content: space-between;
-}
-
 .info {
-  color: #f6f7f3;
+  margin: auto;
+  padding: 20px 10px 5px 10px;
+}
+
+.infoTime {
+  color: white;
   font-size: 2rem;
   text-decoration: none;
+  text-align: center;
 }
-.info .link {
-  color: #f6f7f3;
+.infoFlip {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: right;
+  padding-right: 15px;
+}
+.quit {
+  color: rgb(255, 255, 255);
   font-size: 2rem;
   font-weight: 900;
   text-decoration: none;
+  transition: 0.5s;
+  text-align: left !important;
+  padding: 5px 20px 10px 20px;
+}
+.quit:hover {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  text-decoration: none;
+  transition: 0.5s;
+  background-color: rgb(255, 255, 255);
 }
 
-.container {
+.mainCard {
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 10px;
-  margin: 50px;
+  margin: 20px auto;
   justify-content: center;
   perspective: 500px;
+  width: 100%;
+  height: auto;
+  padding: 5px 20px;
 }
 
 .card {
@@ -63,10 +88,22 @@ body {
   backface-visibility: hidden;
   border-radius: 12px;
   transition: transform 500ms ease-in-out;
-  padding: 10px 10px;
+  padding: 20px;
+}
+.face-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  transition: transform 500ms ease-in-out;
+  padding: 20px 10px;
 }
 
-.card.matched .value {
+.mainCard .matched .value {
   animation: shake 1s linear infinite 500ms;
   visibility: hidden;
 }
@@ -84,6 +121,7 @@ body {
   font-size: 6rem;
   font-weight: 700;
   color: #e2ded1;
+  text-align: center;
   filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.6));
 }
 
@@ -97,7 +135,15 @@ body {
   animation: overlay-grow 500ms forwards;
   cursor: pointer;
 }
-
+h5 {
+  /* padding-top: 5rem; */
+  text-align: center;
+  color: white;
+}
+.copyrights {
+  width: 30px;
+  height: auto;
+}
 @keyframes overlay-grow {
   from {
     background-color: rgba(0, 0, 0, 0);
@@ -109,7 +155,7 @@ body {
   }
 }
 
-@keyframes shake {
+/* @keyframes shake {
   0%,
   100% {
     transform: rotate(0);
@@ -120,7 +166,7 @@ body {
   75% {
     transform: rotate(10deg);
   }
-}
+} */
 
 .back {
   background-color: #f6f7f3;
@@ -143,22 +189,87 @@ body {
 
 .card.visible .front {
   transform: rotateY(0deg);
+
+  /* Mobile Device */
 }
 
-/* Mobile Device */
-
-@media (max-width: 600px) {
-  .container {
-    grid-template-columns: repeat(3, auto);
+@media only screen and (max-width: 992px) {
+  .info {
+    margin: auto;
+    padding: 20px 10px 5px 10px;
   }
-  .info-container {
-    flex-direction: column;
-    align-items: center;
+
+  .infoFlip {
+    text-align: left;
+  }
+  .c {
+    text-align: right !important;
+  }
+  .quit {
+    text-align: right !important;
+    padding: 5px 0px;
   }
 }
 
-@media (max-width: 600px) {
-  .container {
-    grid-template-columns: repeat(2, auto);
+@media only screen and (max-width: 769px) {
+  .bg-img-left {
+    visibility: hidden;
+    display: none;
   }
 }
+@media only screen and (max-width: 576px) {
+  .mainCard {
+    grid-template-columns: repeat(3, auto) !important;
+  }
+  .infoFlip,
+  .infoTime,
+  .quit {
+    padding: 0px;
+    font-size: 1.5rem;
+  }
+  #web1,
+  #web2,
+  #web3,
+  #web4 {
+    visibility: hidden;
+    display: none;
+    height: 0px;
+    content: none;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .mainCard {
+    grid-template-columns: repeat(3, auto) !important;
+  }
+  .card {
+    position: relative;
+    height: 100px;
+    width: 80px;
+  }
+  .infoFlip,
+  .infoTime {
+    padding: 0px;
+    font-size: 0rem;
+    visibility: hidden;
+  }
+  .quit {
+    font-size: 2rem;
+  }
+  #time,
+  #flips {
+    visibility: visible;
+    font-size: 2rem;
+    /* height: 0; */
+  }
+
+  h5 {
+    margin-bottom: 30px !important;
+  }
+  .overlay-text {
+    font-size: 2rem !important;
+  }
+  .overlay-text-small {
+    font-size: 1rem !important;
+  }
+} ;

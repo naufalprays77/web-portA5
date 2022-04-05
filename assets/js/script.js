@@ -1,10 +1,10 @@
 class AudioController {
   constructor() {
-    this.bgMusic = new Audio('assets/song/soundmusic.mp3');
-    this.flipSound = new Audio('assets/song/flip.mp3');
-    this.matchSound = new Audio('assets/song/match.wav');
-    this.victorySound = new Audio('assets/song/applause.mp3');
-    this.gameOverSound = new Audio('assets/song/boo.wav');
+    this.bgMusic = new Audio('song/soundmusic.mp3');
+    this.flipSound = new Audio('song/flip.mp3');
+    this.matchSound = new Audio('song/match.wav');
+    this.victorySound = new Audio('song/applause.mp3');
+    this.gameOverSound = new Audio('song/boo.wav');
     this.bgMusic.volume = 0.5;
     this.gameOverSound.volume = 0.5;
     this.bgMusic.loop = true;
@@ -93,10 +93,17 @@ class gamePlay {
     card1.classList.add('matched');
     card2.classList.add('matched');
     this.audioController.match();
+    var mobile = window.matchMedia('(max-width: 576px)');
     if (this.matchesCard.length === this.cards.length) {
       this.victory();
     }
+    if (mobile.matches) {
+      if (this.matchesCard.length + 4 === this.cards.length) {
+        this.victory();
+      }
+    }
   }
+
   cardNotMatch(card1, card2) {
     this.busy = true;
     setTimeout(() => {
@@ -163,4 +170,9 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', ready());
 } else {
   ready();
+}
+
+function del() {
+  const id0 = document.getElementById('.web1');
+  id0.remove();
 }
