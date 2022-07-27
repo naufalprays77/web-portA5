@@ -4,112 +4,81 @@
   box-sizing: border-box;
   font-family: 'Purple Purse', cursive;
 }
+
 body {
   background-color: #322c34;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
+
 h5 {
   text-align: center;
   color: white;
 }
-.bg-section {
-  background-image: url('../img/home/bg-left.jpg');
+
+/* End General  */
+/* ========================================================================================== */
+/* Start Index */
+
+#bgAwal {
+  background-image: url('../img/bg-Home1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
-}
-
-.bg-section .logo {
-  margin: auto;
   width: 100%;
-  height: auto;
-  margin-top: 14rem;
-}
-
-.info {
-  margin: auto;
-  padding: 20px 10px 5px 10px;
-}
-
-.infoTime {
-  color: white;
-  font-size: 2rem;
-  text-decoration: none;
-  text-align: center;
-}
-.infoFlip {
-  color: white;
-  font-size: 2rem;
-  text-decoration: none;
-  text-align: right;
-  padding-right: 15px;
-}
-.quit {
-  color: rgb(255, 255, 255);
-  font-size: 2rem;
-  font-weight: 900;
-  text-decoration: none;
-  transition: 0.5s;
-  text-align: left !important;
-  padding: 5px 20px 10px 20px;
-}
-.quit:hover {
-  color: rgb(0, 0, 0);
-  font-weight: 900;
-  text-decoration: none;
-  transition: 0.5s;
-  background-color: rgb(255, 255, 255);
-}
-
-.mainCard {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  margin: 20px auto;
-  justify-content: center;
-  perspective: 500px;
-  width: 100%;
-  height: auto;
-  padding: 5px 20px;
-}
-
-.card {
   position: relative;
-  height: 150px;
-  width: 125px;
 }
 
-.face {
-  position: absolute;
+#bgAwal::after {
+  content: '';
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  transition: transform 500ms ease-in-out;
-  padding: 20px;
-}
-.face-2 {
+  background-color: rgba(139, 139, 139, 0.5);
   position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  transition: transform 500ms ease-in-out;
-  padding: 20px 10px;
+  z-index: 1;
+  bottom: 0;
+  filter: blur(8px);
 }
 
-.mainCard .matched .value {
-  animation: shake 1s linear infinite 500ms;
-  visibility: hidden;
+#bgAwal .container-fluid {
+  z-index: 2;
+  position: relative;
 }
+
+#bgAwal .container-fluid .row {
+  height: 100vh;
+}
+
+#bgAwal .container-fluid .row .col-lg-6 {
+  display: flex;
+}
+
+#bgAwal .container-fluid .row .col-lg-6 a {
+  text-decoration: none;
+  color: black;
+  border-radius: 100px;
+}
+
+#bgAwal .container-fluid .row .col-lg-6 a:hover {
+  color: white;
+}
+
+#bgAwal .container-fluid .row .col-lg-6 a h1 {
+  font-size: 5rem;
+  padding: 20px 50px;
+  margin: 0;
+}
+
+#bgAwal .container-fluid .row .col-lg-6 .size-img-logo {
+  width: 100%;
+  position: relative;
+}
+
+/* End Index  */
+/* ========================================================================================== */
+/* Start Game */
 
 .overlay-text {
   display: none;
@@ -150,6 +119,102 @@ h5 {
   }
 }
 
+#bg-game .container-fluid .row .bg-section .logo {
+  margin: auto;
+  width: 100%;
+  margin-top: 14rem;
+}
+
+#bg-game .container-fluid .row .section-game {
+  min-height: 100vh;
+  background-color: #322c34;
+}
+
+#bg-game .container-fluid .row .section-game .info {
+  margin: auto;
+  padding: 20px 10px 5px 10px;
+}
+
+#bg-game .container-fluid .row .section-game .infoFlip {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: right;
+  padding-right: 15px;
+}
+
+#bg-game .container-fluid .row .section-game .infoTime {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+#bg-game .container-fluid .row .section-game .quit {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: 0.5s;
+  text-align: left !important;
+  padding: 5px 20px 10px 20px;
+}
+#bg-game .container-fluid .row .section-game .quit:hover {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  text-decoration: none;
+  transition: 0.5s;
+  background-color: rgb(255, 255, 255);
+}
+
+#bg-game .container-fluid .row .section-game .mainCard {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  margin: 30px auto;
+  justify-content: center;
+  perspective: 500px;
+  width: 100%;
+  height: auto;
+  padding: 5px 20px;
+}
+
+#bg-game .container-fluid .row .section-game .mainCard .card {
+  position: relative;
+  height: 150px;
+  width: 125px;
+}
+
+#bg-game .container-fluid .row .section-game .mainCard .card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  transition: transform 500ms ease-in-out;
+  padding: 20px;
+}
+#bg-game .container-fluid .row .section-game .mainCard .card .face-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  transition: transform 500ms ease-in-out;
+  padding: 20px;
+}
+
+#bg-game .container-fluid .row .section-game .mainCard .matched .value {
+  animation: shake 1s linear infinite 500ms;
+  visibility: hidden;
+}
+
 .back {
   background-color: #f6f7f3;
   transition: all 0.3s ease-in-out;
@@ -173,42 +238,45 @@ h5 {
   transform: rotateY(0deg);
 }
 
-.copyrights {
-  width: 30px;
-  height: auto;
+.info {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  gap: 50px;
 }
+
+/* End Game  */
+/* ========================================================================================== */
 /* Mobile Device */
-@media only screen and (max-width: 992px) {
-  .info {
-    margin: auto;
-    padding: 20px 10px 5px 10px;
-  }
 
-  .infoFlip {
-    text-align: left;
+@media only screen and (max-width: 600px) {
+  #bgAwal .container-fluid .row .col-lg-6 {
+    display: flex;
+    flex-direction: column;
   }
-  .quit {
-    text-align: right !important;
-    padding: 5px 0px;
+  #bgAwal .container-fluid .row .col-lg-6 a h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px 30px;
   }
-}
-
-@media only screen and (max-width: 769px) {
-  .bg-section {
-    visibility: hidden;
+  #bg-game .bg-section {
     display: none;
+    visibility: hidden;
   }
-}
-@media only screen and (max-width: 576px) {
-  .mainCard {
+  #bg-game .mainCard {
     grid-template-columns: repeat(3, auto) !important;
   }
-  .infoFlip,
-  .infoTime,
-  .quit {
-    padding: 0px;
-    font-size: 1.5rem;
+
+  #bg-game .card {
+    position: relative;
+    height: 100px !important;
+    width: 80px !important;
   }
+
+  #bg-game .info {
+    gap: 30px;
+  }
+
   #web1,
   #web2,
   #web3,
@@ -218,39 +286,49 @@ h5 {
     height: 0px;
     content: none;
   }
-}
 
-@media only screen and (max-width: 376px) {
-  .mainCard {
-    grid-template-columns: repeat(3, auto) !important;
-  }
-  .card {
-    position: relative;
-    height: 100px;
-    width: 80px;
-  }
   .infoFlip,
   .infoTime {
-    padding: 0px;
-    font-size: 0rem;
+    padding: 0px !important;
+    font-size: 0rem !important;
     visibility: hidden;
-  }
-  .quit {
-    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column-reverse;
   }
   #time,
   #flips {
     visibility: visible;
-    font-size: 2rem;
+
+    font-size: 1.5rem;
   }
 
-  h5 {
-    margin-bottom: 30px !important;
+  .quit {
+    text-align: right !important;
+    padding: 5px 0px;
+    font-size: 1.5rem !important;
+    height: 10px !important;
   }
-  .overlay-text {
-    font-size: 2rem !important;
+
+  @media only screen and (max-width: 1023px) and (min-width: 600px) {
+    #bgAwal .container-fluid .row .col-lg-6 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #bgAwal .container-fluid .row .col-lg-6 .size-img-logo {
+      width: 50%;
+      cursor: pointer;
+      position: relative;
+      margin: auto;
+    }
+
+    #bgAwal .container-fluid .row .col-lg-6 a h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 10px 30px;
+    }
   }
-  .overlay-text-small {
-    font-size: 1rem !important;
-  }
-} ;
+
+  /* End Mobile Device  */
+  /* ========================================================================================== */
+}
